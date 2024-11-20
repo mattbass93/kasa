@@ -4,60 +4,6 @@
     padding: 0;
   }
   
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  
-    .logo {
-      width: 110px;
-    }
-  
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 15px;
-  
-      a {
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-        font-size: 14px;
-      }
-    }
-  }
-  
-  .banner {
-    background-image: url('../assets/images/headlinebackground.png');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    text-align: center;
-    color: white;
-    padding: 20px 20px;
-    border-radius: 0.50rem;
-  
-    &::before {
-        content: '';
-        position: absolute;
-        border-radius: 0.50rem;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7); /* Couche noire semi-transparente */
-        z-index: 1; /* Place la superposition en dessous du texte */
-      }
-    
-      h2 {
-        position: relative;
-        z-index: 2; /* Place le texte au-dessus de la superposition */
-      }
-  }
   
   .logements {
     display: grid;
@@ -88,32 +34,10 @@
     }
   }
   
-  footer {
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 12px;
-    color: #666;
-    background-color: black;
-
-    .footer-logo {
-        margin-top: 20px;
-    }
-  }
+  
   
 
   @media (min-width: 768px) {
-    header {
-        .logo {
-            width: 140px;
-          }
-
-          ul {       
-            a {
-              text-transform : none;
-              font-size: 1.5rem;
-            }
-          }
-    }
     
     .logements {
       background-color: #F6F6F6;
@@ -122,16 +46,6 @@
       padding: 40px;
       border-radius: 25px;
     }
-
-    .banner {
-      border-radius: 15px;
-      padding: 50px 20px;
-
-      &::before {
-        border-radius: 15px;
-      }
-    }
-
 
   }
 

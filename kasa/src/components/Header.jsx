@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Utiliser des liens pour React Router
+import './Header.scss'
+import { NavLink } from "react-router-dom"; // Utiliser des liens pour React Router
 import KasaLogo from "../assets/logos/kasalogo.png";
 
 function Header() {
@@ -11,14 +12,20 @@ function Header() {
           <nav className=" text-end">
             <ul className="d-flex justify-content-end align-items-center gap-3 gap-md-5 ">
             <li>
-            <Link to="/">
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+            >
               Accueil
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/about">
-              À Propos
-            </Link>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+            >
+              A Propos
+            </NavLink>
           </li>
             </ul>
           </nav>

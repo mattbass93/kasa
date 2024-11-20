@@ -1,6 +1,8 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import './Home.scss';
+import Banner from "../components/Banner";
+import HomeBannerImage from "../assets/images/homebanner.png";
 import logements from '../data/logements.json'; // Import des données JSON
 
 
@@ -11,9 +13,13 @@ function Home() {
         <Header />
       
         <main className="container">
-          <div className="banner">
-            <h2 className="fw-bold">Chez vous, partout et ailleurs</h2>
-          </div>
+        <div>
+      <Banner
+        image={HomeBannerImage}
+        title="Chez vous, partout et ailleurs"
+      />
+      {/* Autres contenus de la page */}
+    </div>
           <section className="logements mt-4">
           {logements.map((logement) => (
             <a

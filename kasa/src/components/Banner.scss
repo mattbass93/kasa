@@ -1,0 +1,53 @@
+.banner {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 50px 20px;
+    border-radius: 0.50rem;
+    margin-bottom: 20px;
+  
+    &::before {
+        content: '';
+        position: absolute;
+        border-radius: 0.50rem;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7); /* Couche noire semi-transparente */
+        z-index: 1; /* Place la superposition en dessous du texte */
+      }
+
+      &.with-title {
+        justify-content: center; /* Centrer le contenu avec le titre */
+        color: white;
+    
+        .banner-title {
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+    
+  }
+  
+    &.without-title {     
+      height: 100px;
+    }
+}
+  
+
+@media (min-width: 768px) {
+    .banner {
+        border-radius: 20px;
+  
+        &::before {
+          border-radius: 15px;
+        }
+
+        &.without-title {
+            height: 200px;
+        }
+      }
+}
