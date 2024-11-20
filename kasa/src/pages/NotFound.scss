@@ -1,0 +1,26 @@
+.notfound-container {
+   margin-top: 50px;
+   margin-bottom: 90px;
+    
+  
+    .notfound-title {
+        font-size: clamp(6rem, 20vw, 10rem); /* Taille dynamique */
+        font-weight: bold;
+        color: #FF6060;
+      }
+      
+      .notfound-message {
+        font-size: clamp(1rem, 3vw, 1.5rem); /* Taille dynamique */
+        color: #FF6060;
+      }
+      
+  
+    .notfound-link {
+      font-size: 1rem;
+  
+      &:visited {
+        color: black;
+      }
+    }
+  }
+  

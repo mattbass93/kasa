@@ -1,5 +1,6 @@
 import React from "react";
 import KasaLogoBlackAndWhite from "../assets/logos/kasalogoblackandwhite.png";
+import "./Footer.scss"
 
 function Footer() {
     return (

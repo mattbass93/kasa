@@ -9,15 +9,15 @@ function Header() {
             <img className="img-fluid logo" src={KasaLogo} alt="Logo Kasa" />
           </h1>
           <nav className=" text-end">
-            <ul className="d-flex justify-content-end align-items-center gap-3">
+            <ul className="d-flex justify-content-end align-items-center gap-3 gap-md-5 ">
             <li>
-            <Link to="/" className="nav-link">
-              ACCUEIL
+            <Link to="/">
+              Accueil
             </Link>
           </li>
           <li>
-            <Link to="/about" className="nav-link">
-              À PROPOS
+            <Link to="/about">
+              À Propos
             </Link>
           </li>
             </ul>
