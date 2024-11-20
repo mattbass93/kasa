@@ -1,0 +1,131 @@
+.logement-container {
+  
+    .logement-banner {
+      width: 100%;
+      border-radius: 10px;
+    }
+  
+    .logement-info {
+      margin: 20px 0 0 0;
+  
+      .logement-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+  
+      .logement-location {
+        font-size: 1rem;
+        color: #767676;
+      }
+  
+      
+    }
+
+    .logement-details {
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+      
+            .tag {
+              background-color: #ff6060;
+              color: white;
+              padding: 2px 30px;
+              border-radius: 10px;
+              font-size: 0.9rem;
+            }
+          }
+    }
+  
+    .logement-meta {
+      align-items: center;
+      margin: 10px 0;
+
+      
+  
+      .host {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+  
+        p {
+          font-weight: bold;
+          margin-bottom: 0;
+        }
+  
+        .host-picture {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+  
+      .rating {
+        display: flex;
+        gap: 5px;
+  
+        .star {
+          font-size: 1.2rem;
+          color: #e3e3e3;
+  
+          &.filled {
+            color: #ff6060;
+          }
+        }
+      }
+    }
+  
+    .dropdown {
+        margin-bottom: 20px;
+      
+        .dropdown-button {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          padding: 10px;
+          background-color: #ff6060;
+          color: white;
+          font-weight: bold;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+      
+          img {
+            width: 20px;
+            transform: rotate(0deg);
+            transition: transform 0.3s;
+          }
+        }
+      
+        .dropdown-content {
+          display: none;
+          padding: 10px;
+          background-color: #f6f6f6;
+          border-radius: 5px;
+          margin-top: 10px;
+        }
+      
+        /* Afficher le contenu si ouvert */
+        &.open {
+          .dropdown-content {
+            display: block;
+          }
+      
+          .dropdown-button img {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      
+  }
+  
+
+  @media (min-width: 768px) {
+    .rating {
+      margin-left: 50px;
+
+    }
+ }

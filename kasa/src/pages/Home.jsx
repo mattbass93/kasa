@@ -1,6 +1,5 @@
-import KasaLogo from '../assets/logos/kasalogo.png'; // Chemin relatif
-import KasaLogoBlackAndWhite from '../assets/logos/kasalogoblackandwhite.png';
-
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import './Home.scss';
 import logements from '../data/logements.json'; // Import des données JSON
 
@@ -9,17 +8,7 @@ import logements from '../data/logements.json'; // Import des données JSON
 function Home() {
     return (
       <div className='body-div'>
-        <header className="container align-items-center">
-          <h1 className="">
-            <img className="img-fluid logo" src={KasaLogo} alt="Logo Kasa" />
-          </h1>
-          <nav className=" text-end">
-            <ul className="d-flex justify-content-end align-items-center gap-3">
-              <li><a href="/" className="nav-link">ACCUEIL</a></li>
-              <li><a href="/about" className="nav-link">À PROPOS</a></li>
-            </ul>
-          </nav>
-        </header>
+        <Header />
       
         <main className="container">
           <div className="banner">
@@ -41,20 +30,9 @@ function Home() {
             </a>
           ))}
         </section>
-
-        </main>
-      
-        <footer className="text-white text-center mt-4 py-3 w-100">
-            <img src={KasaLogoBlackAndWhite} alt="logo de Kasa en noir et blanc" className="footer-logo" />
-            <p>© 2020 Kasa. All rights reserved</p>
-        </footer>
-
+        </main>     
+        <Footer />
       </div>
-          
-      
-
-        
-
     );
   }
   
