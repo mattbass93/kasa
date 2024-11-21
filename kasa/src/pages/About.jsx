@@ -7,29 +7,32 @@ import Banner from "../components/Banner.jsx";
 import AboutBannerImage from "../assets/images/aboutbanner.png";
 
 function About() {
-  const [openSection, setOpenSection] = useState(null);
+  const [openSections, setOpenSections] = useState([]);
 
   const sections = [
-    { title: "Fiabilité", content: "Les annonces postées sur Kasa garantissent une fiabilité totale." },
-    { title: "Respect", content: "La bienveillance fait partie des valeurs fondatrices de Kasa." },
-    { title: "Service", content: "Nos équipes restent à votre disposition pour assurer une expérience parfaite." },
-    { title: "Sécurité", content: "La sécurité est notre priorité, tant pour nos hôtes que pour les voyageurs." },
+    { title: "Fiabilité", content: "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes." },
+    { title: "Respect", content: "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme." },
+    { title: "Service", content: "La qualité du service est au coeur de notre engagement chez Kasa. Nous veillons à ce que chaque interaction, que ce soit avec nos hôtes ou nos locataires, soit empreinte de respect et de bienveillance." },
+    { title: "Sécurité", content: "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes." },
   ];
 
   const toggleSection = (index) => {
-    setOpenSection(openSection === index ? null : index); // Ouvre ou ferme la section
+    if (openSections.includes(index)) {
+      // Si l'index est déjà ouvert, le retirer
+      setOpenSections(openSections.filter((i) => i !== index));
+    } else {
+      // Sinon, ajouter l'index au tableau
+      setOpenSections([...openSections, index]);
+    }
   };
 
   return (
     <div className="body-div">
       <Header />
       <main className="about-container">
-      <div>
-      <Banner
-        image={AboutBannerImage}
-      />
-      {/* Autres contenus de la page */}
-    </div>
+        <div>
+          <Banner image={AboutBannerImage} />
+        </div>
         <div className="about-sections">
           {sections.map((section, index) => (
             <div key={index} className="about-section">
@@ -41,10 +44,10 @@ function About() {
                 <img
                   src={Vector}
                   alt="Icône pour dérouler ou replier"
-                  className={`vector-icon ${openSection === index ? "rotate" : ""}`}
+                  className={`vector-icon ${openSections.includes(index) ? "rotate" : ""}`}
                 />
               </button>
-              <div className={`about-content ${openSection === index ? "open" : ""}`}>
+              <div className={`about-content ${openSections.includes(index) ? "open" : ""}`}>
                 <p>{section.content}</p>
               </div>
             </div>
@@ -57,7 +60,6 @@ function About() {
 }
 
 export default About;
-
 
 
   

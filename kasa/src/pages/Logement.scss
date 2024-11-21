@@ -1,16 +1,53 @@
 .logement-container {
   
-    .logement-banner {
+  .logement-banner {
+    position: relative;
+    height: 250px; /* Ajustez la hauteur selon vos besoins */
+    border-radius: 10px; /* Bordures arrondies pour la bannière */
+    overflow: hidden;
+  
+    .banner-image {
       width: 100%;
-      border-radius: 10px;
+      height: 100%;
+      object-fit: cover; /* L'image remplit la bannière en conservant ses proportions */
     }
+  
+    .banner-arrow {
+      position: absolute;
+      height: 30px;
+      top: 50%;
+      cursor: pointer;
+      z-index: 2;
+    
+      &.left {
+        left: 10px;
+      }
+    
+      &.right {
+        right: 10px;
+      }
+    
+    }
+
+    .banner-indicator {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 0.9rem; 
+      z-index: 3; 
+    }
+    
+  }
+  
   
     .logement-info {
       margin: 20px 0 0 0;
   
       .logement-title {
         font-size: 1.5rem;
-        font-weight: bold;
+        color: #ff6060;
       }
   
       .logement-location {
@@ -29,11 +66,14 @@
             margin-top: 10px;
       
             .tag {
+              display: flex;
+              align-items: center;
               background-color: #ff6060;
               color: white;
-              padding: 2px 30px;
-              border-radius: 10px;
-              font-size: 0.9rem;
+              padding: 4px 10px;
+              border-radius: 5px;
+              font-size: 0.7rem;
+              text-align: center;
             }
           }
     }
@@ -93,19 +133,22 @@
           border-radius: 5px;
           cursor: pointer;
       
-          img {
+          .vector-icon {
             width: 20px;
-            transform: rotate(0deg);
-            transition: transform 0.3s;
+            transition: transform 0.3s ease; /* Transition fluide */
           }
-        }
+        }              
       
         .dropdown-content {
-          display: none;
+          display: none;          
           padding: 10px;
           background-color: #f6f6f6;
           border-radius: 5px;
           margin-top: 10px;
+
+          ul {
+            list-style: none;
+          }
         }
       
         /* Afficher le contenu si ouvert */
@@ -115,7 +158,7 @@
           }
       
           .dropdown-button img {
-            transform: rotate(180deg);
+            transform: rotate(-180deg);
           }
         }
       }
@@ -126,6 +169,22 @@
   @media (min-width: 768px) {
     .rating {
       margin-left: 50px;
-
     }
+
+    .banner-arrow {
+      height: 80px;
+    }
+
+    .logement-details .tags .tag {
+      font-size: 0.9rem;
+      border-radius: 10px;
+    }   
+
+  }
+
+ @media (min-width: 1200px) {
+    .logement-banner {
+      height: 400px;
+    }
+
  }

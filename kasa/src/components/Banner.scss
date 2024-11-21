@@ -21,8 +21,9 @@
       }
 
       &.with-title {
-        justify-content: center; /* Centrer le contenu avec le titre */
+        justify-content: center;
         color: white;
+
     
         .banner-title {
             font-weight: bold;
@@ -40,10 +41,15 @@
 
 @media (min-width: 768px) {
     .banner {
+        &.without-title {
         border-radius: 20px;
+        width: 94%;
+        margin-left : auto;
+        margin-right: auto;
+        }
   
         &::before {
-          border-radius: 15px;
+          border-radius: 20px;
         }
 
         &.without-title {
