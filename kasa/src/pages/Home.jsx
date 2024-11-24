@@ -20,7 +20,7 @@ function Home() {
       />
       {/* Autres contenus de la page */}
     </div>
-          <section className="logements mt-4">
+        <section className="logements mt-4">
           {logements.map((logement) => (
             <a
               key={logement.id}

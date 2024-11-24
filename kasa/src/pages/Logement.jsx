@@ -72,44 +72,51 @@ function Logement() {
               </div>
             )}
           </div>
-        {/* Informations sur le logement */}
-        <div className="logement-info">
-          <div>
-            <h1 className="logement-title">{logement.title}</h1>
-            <p className="logement-location">{logement.location}</p>
-          </div>
-        </div>
 
-        {/* Conteneur pour les tags et les métadonnées */}
-        <div className="logement-details d-md-flex justify-content-between align-items-center">
-          <div className="tags">
-            {logement.tags.map((tag, index) => (
-              <span key={index} className="tag fw-bold">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="logement-meta d-flex justify-content-between align-items-center flex-md-column">
-            <div className="rating order-md-2">
+
+            {/* Informations sur le logement */}
+          <div className="logement-infos d-md-flex align-items-center justify-content-between">
+            {/* Logement Info à gauche */}
+            <div className="logement-info w-md-50">
+              <h3 className="logement-title">{logement.title}</h3>
+              <p className="logement-location">{logement.location}</p>
+              <div className="tags">
+                {logement.tags.map((tag, index) => (
+                  <span key={index} className="tag fw-bold">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+              
+            {/* Logement Details à droite */}
+            <div className="logement-details w-md-50 d-flex align-items-center justify-content-between flex-md-column-reverse">
+            <div className="rating">
               {[...Array(5)].map((_, index) => (
-                <span
+                <img
                   key={index}
-                  className={index < logement.rating ? "star filled" : "star"}
-                >
-                  ★
-                </span>
+                  src={
+                    index < logement.rating
+                      ? require("../assets/icons/star-active.png")
+                      : require("../assets/icons/star-inactive.png")
+                  }
+                  alt={index < logement.rating ? "Étoile active" : "Étoile inactive"}
+                  className="star"
+                />
               ))}
             </div>
-            <div className="host d-flex align-items-center mt-md-0">
-              <p>{logement.host.name}</p>
-              <img
-                src={logement.host.picture}
-                alt={logement.host.name}
-                className="host-picture"
-              />
+
+              <div className="host d-flex align-items-center">
+                <p>{logement.host.name}</p>
+                <img
+                  src={logement.host.picture}
+                  alt={logement.host.name}
+                  className="host-picture"
+                />
+              </div>
             </div>
           </div>
-        </div>
+
 
         {/* Dropdowns pour la description et les équipements */}
         <div className="dropdown-container row">

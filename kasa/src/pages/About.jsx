@@ -33,7 +33,7 @@ function About() {
         <div>
           <Banner image={AboutBannerImage} />
         </div>
-        <div className="about-sections">
+        <div className="container about-sections">
           {sections.map((section, index) => (
             <div key={index} className="about-section">
               <button
