@@ -11,31 +11,25 @@ function Home() {
     return (
       <div className='body-div'>
         <Header />
-      
         <main className="container">
-        <div>
-      <Banner
-        image={HomeBannerImage}
-        title="Chez vous, partout et ailleurs"
-      />
-      {/* Autres contenus de la page */}
-    </div>
-        <section className="logements mt-4">
-          {logements.map((logement) => (
-            <a
-              key={logement.id}
-              href={`/logement/${logement.id}`} // Lien vers la page spécifique
-              className="logement-card text-decoration-none" // Ajoute les classes nécessaires
-            >
-              <img
-                className="logement-card-image"
-                src={logement.cover}
-                alt={logement.title}
-              />
-              <h3 className="fw-bold mt-2 ml-1">{logement.title}</h3>
-            </a>
-          ))}
-        </section>
+          <Banner
+            image={HomeBannerImage}
+            title="Chez vous, partout et ailleurs"
+          />   
+          <section className="logements mt-4">
+            {logements.map((logement) => (
+              <a
+                key={logement.id}
+                href={`/logement/${logement.id}`} // Lien vers la page spécifique
+                className="logement-card text-decoration-none"
+                style={{
+                  backgroundImage: `url(${logement.cover})`,
+                }}
+              >
+                <h3 className="fw-bold mt-2 ml-1">{logement.title}</h3>
+              </a>
+            ))}
+          </section>
         </main>     
         <Footer />
       </div>

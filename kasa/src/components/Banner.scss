@@ -41,19 +41,22 @@
 
 @media (min-width: 768px) {
     .banner {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
         &.without-title {
         border-radius: 20px;
        /* width: 94%; */
         margin-left : auto;
         margin-right: auto;
+        height: 200px;
         }
   
         &::before {
           border-radius: 20px;
         }
 
-        &.without-title {
-            height: 200px;
+        &.with-title {
+          border-radius: 20px;
         }
       }
 }
