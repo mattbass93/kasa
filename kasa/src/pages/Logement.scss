@@ -112,50 +112,7 @@
 
 
   
-    .dropdown {
-        margin-bottom: 20px;
-      
-        .dropdown-button {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 100%;
-          padding: 10px;
-          background-color: #ff6060;
-          color: white;
-          font-weight: bold;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-      
-          .vector-icon {
-            width: 20px;
-            transition: transform 0.3s ease; /* Transition fluide */
-          }
-        }              
-      
-        .dropdown-content {
-          display: none;          
-          padding: 10px;
-          background-color: #f6f6f6;
-          border-radius: 5px;
-
-          ul {
-            list-style: none;
-          }
-        }
-      
-        /* Afficher le contenu si ouvert */
-        &.open {
-          .dropdown-content {
-            display: block;
-          }
-      
-          .dropdown-button img {
-            transform: rotate(-180deg);
-          }
-        }
-      }
+    
       
   }
   

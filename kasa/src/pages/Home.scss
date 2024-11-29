@@ -21,7 +21,7 @@
       flex-direction: column;
       justify-content: flex-end; /* Aligne le titre en bas */
       overflow: hidden;
-      height: 220px; /* Définit une hauteur fixe */
+      height: 255px; /* Définit une hauteur fixe */
       padding: 10px; /* Ajoute de l'espace pour le titre */
   
       h3 {
@@ -58,6 +58,8 @@
        /* Espacement entre les cards */
       padding: 40px;
       border-radius: 25px;
+
+      
     }
 
   }
@@ -65,6 +67,12 @@
   @media (min-width: 1200px) {
     .logements {
       grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur égale */
+      /*gap: 40px; */
+
+      .logement-card {
+        height : 340px;
+        width: 340px;
+      }
     }
 
 

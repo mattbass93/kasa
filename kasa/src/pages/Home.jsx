@@ -4,8 +4,7 @@ import './Home.scss';
 import Banner from "../components/Banner";
 import HomeBannerImage from "../assets/images/homebanner.png";
 import logements from '../data/logements.json'; // Import des données JSON
-
-
+import { Link } from "react-router-dom"; // Import React Router Link
 
 function Home() {
     return (
@@ -18,23 +17,22 @@ function Home() {
           />   
           <section className="logements mt-4">
             {logements.map((logement) => (
-              <a
+              <Link
                 key={logement.id}
-                href={`/logement/${logement.id}`} // Lien vers la page spécifique
+                to={`/logement/${logement.id}`} // Utilisation de `to` au lieu de `href`
                 className="logement-card text-decoration-none"
                 style={{
                   backgroundImage: `url(${logement.cover})`,
                 }}
               >
                 <h3 className="fw-bold mt-2 ml-1">{logement.title}</h3>
-              </a>
+              </Link>
             ))}
           </section>
         </main>     
         <Footer />
       </div>
     );
-  }
-  
-  export default Home;
-  
+}
+
+export default Home;
