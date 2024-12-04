@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Import du composant Link
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import './Home.scss';
@@ -37,20 +38,23 @@ function Home() {
             image={HomeBannerImage}
             title="Chez vous, partout et ailleurs"
           />
-          <section className="logements mt-4">
-            {logements.map((logement) => (
-              <a
-                key={logement.id}
-                href={`/logement/${logement.id}`} // Lien vers la page spécifique
-                className="logement-card text-decoration-none"
-                style={{
-                  backgroundImage: `url(${logement.cover})`,
-                }}
-              >
-                <h3 className="fw-bold mt-2 ml-1">{logement.title}</h3>
-              </a>
-            ))}
+          <section className="logements-container">
+            <div className="logements">
+              {logements.map((logement) => (
+                <Link
+                  key={logement.id}
+                  to={`/logement/${logement.id}`} // Utilisation de React Router
+                  className="logement-card text-decoration-none"
+                  style={{
+                    backgroundImage: `url(${logement.cover})`,
+                  }}
+                >
+                  <h3 className="fw-bold">{logement.title}</h3>
+                </Link>
+              ))}
+            </div>
           </section>
+
         </main>
         <Footer />
       </div>
@@ -58,3 +62,4 @@ function Home() {
 }
 
 export default Home;
+

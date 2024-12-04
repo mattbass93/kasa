@@ -32,12 +32,15 @@
         list-style: none;
         padding: 10px 0;
       }
+
+      p {
+        padding: 10px 0;
+      }
     }
   
     /* État ouvert */
     &.open {
       .dropdown-content {
-        height: 150px;
         max-height: 500px; /* Une valeur suffisante pour contenir le contenu */
         transform: translateY(0); /* Position normale */
         padding: 10px; /* Rétablit le padding */
@@ -57,4 +60,26 @@
     .dropdown-container {
         gap: 0;
       }
+
+      .dropdown {
+        &.open {
+          .dropdown-content {
+            height: 250px;
+          }
+        }
+      }
+      
+        
+  }
+
+  @media (min-width: 1200px) {
+      .dropdown {
+        &.open {
+          .dropdown-content {
+            height: 200px;
+          }
+        }
+      }
+      
+        
   }

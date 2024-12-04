@@ -4,7 +4,6 @@
     padding: 0;
   }
   
-  
   .logements {
     display: grid;
     gap: 20px;
@@ -64,10 +63,16 @@
 
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
+      .logements-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    } 
+
     .logements {
       grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur égale */
-      /*gap: 40px; */
+      gap: 40px;
 
       .logement-card {
         height : 340px;
