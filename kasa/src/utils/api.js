@@ -1,6 +1,6 @@
 export const fetchLogements = async () => {
     try {
-        const response = await fetch("../data/logements.json"); // Remplacez par l'URL réelle de votre API
+        const response = await fetch("/logements.json"); // Chemin dans `public`
         if (!response.ok) {
             throw new Error("Erreur lors de la récupération des logements");
         }

@@ -37,6 +37,7 @@
     /* État ouvert */
     &.open {
       .dropdown-content {
+        height: 150px;
         max-height: 500px; /* Une valeur suffisante pour contenir le contenu */
         transform: translateY(0); /* Position normale */
         padding: 10px; /* Rétablit le padding */

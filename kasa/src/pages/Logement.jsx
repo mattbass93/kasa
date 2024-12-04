@@ -1,21 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Logement.scss";
 import { useParams, Navigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Dropdown from "../components/Dropdown"; // Import du composant Dropdown
-import logements from "../data/logements.json";
+import { fetchLogements } from "../utils/api"; // Import de fetchLogements
 import VectorLeft from "../assets/icons/vectorleft.png";
 import VectorRight from "../assets/icons/vectorright.png";
 
 function Logement() {
-  const { id } = useParams();
-  const logement = logements.find((logement) => logement.id === id);
+  const { id } = useParams(); // Récupère l'ID du logement depuis l'URL
+  const [logement, setLogement] = useState(null); // État pour stocker les données du logement
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // État pour gérer l'index des images
+  const [error, setError] = useState(null); // État pour gérer les erreurs
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // Récupération des données de logement
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const logements = await fetchLogements(); // Récupère tous les logements
+        const logementData = logements.find((logement) => logement.id === id); // Filtre par ID
+        if (!logementData) {
+          throw new Error("Logement introuvable");
+        }
+        setLogement(logementData); // Met à jour les données du logement
+      } catch (err) {
+        setError(err.message); // Gère l'erreur
+      }
+    };
 
-  if (!logement) {
+    fetchData();
+  }, [id]);
+
+  // Gestion des erreurs : redirection vers NotFound si le logement est introuvable
+  if (error) {
     return <Navigate to="*" />;
+  }
+
+  // Affiche un état de chargement si le logement n'est pas encore chargé
+  if (!logement) {
+    return <p>Chargement...</p>;
   }
 
   const handleNextImage = () => {
