@@ -8,7 +8,7 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/kasa">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
