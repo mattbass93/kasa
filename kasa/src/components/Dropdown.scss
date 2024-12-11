@@ -31,10 +31,15 @@
       ul {
         list-style: none;
         padding: 10px 0;
+
+        li {
+          font-size: 0.8rem;
+        }
       }
 
       p {
         padding: 10px 0;
+        font-size: 0.8rem;
       }
     }
   
@@ -64,19 +69,17 @@
       .dropdown {
         &.open {
           .dropdown-content {
-            height: 250px;
-          }
-        }
-      }
-      
-        
-  }
+            height: 210px;
 
-  @media (min-width: 1200px) {
-      .dropdown {
-        &.open {
-          .dropdown-content {
-            height: 200px;
+            ul {    
+              li {
+                font-size: 0.9rem;
+              }
+            }
+      
+            p {
+              font-size: 0.9rem;
+            }
           }
         }
       }
