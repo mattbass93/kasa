@@ -47,15 +47,19 @@
         display: block;     
     }
     
-    .slider-arrow {
-      height: 80px;
-    }
 }
 
 
 @media (min-width: 1200px) {
     .image-slider {
       height: 400px;
+
+      .slider-arrow {
+        height: 80px;
+        top: 40%
+      }
     }
+
+    
 
  }
