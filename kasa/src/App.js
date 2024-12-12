@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/kasa/" element={<Home />} />
+        <Route path="/kasa/kasa/" element={<Home />} />
         <Route path="/kasa/kasa/about" element={<About />} />
         <Route path="/kasa/logement/:id" element={<Logement />} />
         {/* Catch-all route for 404 */}
