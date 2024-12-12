@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import './assets/styles/global.scss';
 import Home from './pages/Home';
 import About from './pages/About'
@@ -9,13 +9,16 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/kasa/" element={<Home />} />
-      <Route path="/kasa/kasa/about" element={<About />} />
-      <Route path="/kasa/logement/:id" element={<Logement />} />
-      {/* Catch-all route for 404 */}
-      <Route path="/kasa/kasa/*" element={<NotFound />} />
-    </Routes>
+    <BrowserRouter basename='/kasa'>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/logement/:id" element={<Logement />} />
+        {/* Catch-all route for 404 */}
+        <Route path="/404" element={<NotFound />} />
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

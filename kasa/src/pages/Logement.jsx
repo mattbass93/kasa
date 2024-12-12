@@ -30,7 +30,7 @@ function Logement() {
   }, [id]);
 
   if (error) {
-    return <Navigate to="*" />;
+    return <Navigate to="/404" />;
   }
 
   if (!logement) {
