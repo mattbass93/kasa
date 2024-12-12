@@ -6,9 +6,10 @@ import Logement from './pages/Logement';
 import NotFound from './pages/NotFound';
 
 
+
 function App() {
   return (
-    <Router basename="/kasa">
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
