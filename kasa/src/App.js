@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/kasa/" element={<Home />} />
         <Route path="kasa/about" element={<About />} />
-        <Route path="/kasa/kasa/logement/:id" element={<Logement />} />
+        <Route path="/kasa/logement/:id" element={<Logement />} />
         {/* Catch-all route for 404 */}
         <Route path="/kasa/kasa/*" element={<NotFound />} />
       </Routes>
