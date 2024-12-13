@@ -4,7 +4,7 @@ import { useParams, Navigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Dropdown from "../components/Dropdown";
-import ImageSlider from "../components/ImageSlider"; // Import du nouveau composant
+import ImageSlider from "../components/ImageSlider";
 import { fetchLogements } from "../utils/api";
 
 function Logement() {

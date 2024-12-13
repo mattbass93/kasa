@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./Dropdown.scss"; // Ajoutez un fichier pour les styles, optionnel
+import "./Dropdown.scss";
 
 function Dropdown({ title, content, isList }) {
-  const [isOpen, setIsOpen] = useState(false); // Gère l'état ouvert/fermé
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={`dropdown ${isOpen ? "open" : ""}`}>
@@ -12,7 +12,7 @@ function Dropdown({ title, content, isList }) {
       >
         {title}
         <img
-          src={require("../assets/icons/vector.png")} // Modifiez selon le chemin
+          src={require("../assets/icons/vector.png")}
           alt={`Afficher ou masquer ${title}`}
           className={`vector-icon ${isOpen ? "rotate" : ""}`}
         />

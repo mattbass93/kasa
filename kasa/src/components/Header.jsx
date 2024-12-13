@@ -1,6 +1,6 @@
 import React from "react";
 import './Header.scss'
-import { NavLink } from "react-router-dom"; // Utiliser des liens pour React Router
+import { NavLink } from "react-router-dom";
 import KasaLogo from "../assets/logos/kasalogo.png";
 
 function Header() {

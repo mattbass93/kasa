@@ -5,13 +5,13 @@ import Dropdown from "../components/Dropdown.jsx";
 import "./About.scss";
 import Banner from "../components/Banner.jsx";
 import AboutBannerImage from "../assets/images/aboutbanner.png";
-import aboutSections from "../data/AboutSections.js"; // Import des sections
+import aboutSections from "../data/AboutSections.js";
 
 function About() {
   return (
     <div className="body-div">
       <Header />
-      <main className="about-container">
+      <main className="about-container page-about">
         <div>
           <Banner image={AboutBannerImage} />
         </div>
@@ -21,7 +21,7 @@ function About() {
               key={index}
               title={section.title}
               content={section.content}
-              isList={false} // Les sections ne contiennent pas de liste
+              isList={false}
             />
           ))}
         </div>

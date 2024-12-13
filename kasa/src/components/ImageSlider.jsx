@@ -20,30 +20,23 @@ function ImageSlider({ images, altText }) {
 
   return (
     <div className="image-slider">
-      {/* Affichage de l'image actuelle */}
       <img
         src={images[currentImageIndex]}
         alt={`${altText} - ${currentImageIndex + 1}`}
         className="slider-image"
       />
-
-      {/* Flèche gauche */}
       <img
         src={VectorLeft}
         alt="Précédente"
         className="slider-arrow left"
         onClick={handlePreviousImage}
       />
-
-      {/* Flèche droite */}
       <img
         src={VectorRight}
         alt="Suivante"
         className="slider-arrow right"
         onClick={handleNextImage}
       />
-
-      {/* Indicateur */}
       {images.length > 1 && (
         <div className="slider-indicator">
           {currentImageIndex + 1}/{images.length}

@@ -7,18 +7,18 @@
       flex-direction: column;
       gap: 20px;
   
-
-      .dropdown &.open .dropdown-content {
-        height : 100px;
-      }
     }
 }
-  
 
   @media (min-width: 768px) {
 
     .about-sections {
       width: 80%;
       margin: auto;
+    }
+
+    .page-about .dropdown-content.open {
+      height: 120px; // Exemple : la hauteur spécifique pour la page About
+      transition: height 0.3s ease-in-out; // Animation fluide (si souhaitée)
     }
   }

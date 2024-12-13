@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // Import du composant Link
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import './Home.scss';
 import Banner from "../components/Banner";
-import { fetchLogements } from "../utils/api"; // Importez la fonction fetch
+import { fetchLogements } from "../utils/api"; 
 import HomeBannerImage from "../assets/images/homebanner.png";
 
 function Home() {
-    const [logements, setLogements] = useState([]); // État pour stocker les logements
-    const [error, setError] = useState(null); // État pour gérer les erreurs
+    const [logements, setLogements] = useState([]); 
+    const [error, setError] = useState(null); 
 
     useEffect(() => {
-        // Chargez les données au montage du composant
         const fetchData = async () => {
             try {
-                const data = await fetchLogements(); // Récupérez les logements via la fonction API
-                setLogements(data); // Mettez à jour l'état avec les données récupérées
+                const data = await fetchLogements();
+                setLogements(data); 
             } catch (err) {
                 setError("Impossible de charger les logements");
                 console.error(err);
@@ -24,10 +23,10 @@ function Home() {
         };
 
         fetchData();
-    }, []); // Exécutez uniquement au montage
+    }, []); 
 
     if (error) {
-        return <p>{error}</p>; // Affichez un message d'erreur si nécessaire
+        return <p>{error}</p>;
     }
 
     return (
@@ -43,7 +42,7 @@ function Home() {
               {logements.map((logement) => (
                 <Link
                   key={logement.id}
-                  to={`/logement/${logement.id}`} // Utilisation de React Router
+                  to={`/logement/${logement.id}`}
                   className="logement-card text-decoration-none"
                   style={{
                     backgroundImage: `url(${logement.cover})`,
