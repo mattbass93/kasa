@@ -64,20 +64,20 @@
   }
 
   @media (min-width: 1400px) {
-      .logements-container {
+   /*   .logements-container {
       display: flex;
       justify-content: center;
       padding: 20px;
-    } 
+    } */
 
     .logements {
       grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur égale */
       gap: 40px;
 
-      .logement-card {
+     /* .logement-card {
         height : 340px;
         width: 340px;
-      }
+      } */
     }
 
 
